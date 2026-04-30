@@ -1,6 +1,6 @@
 # JoAI Chatbot
 
-> A modern, full-stack AI chatbot web application — ChatGPT-style UI powered by OpenRouter or Ollama.
+> A personal AI chatbot built by João Vilas-Boas Correia — powered by OpenRouter with Llama 3.
 
 ---
 
@@ -12,13 +12,13 @@
 
 ## Overview
 
-JoAI is a production-ready AI chatbot featuring a clean, minimalist light-theme interface. It connects to AI models via the OpenRouter cloud API (with optional Ollama local fallback), and is built with React + Vite on the frontend and Node.js + Express on the backend.
+JoAI is a personal, production-ready AI chatbot built from scratch by João Vilas-Boas Correia. It features a clean, minimalist light-theme interface and connects to AI models via the OpenRouter API (using Llama 3 as the default free model). Built with React + Vite on the frontend and Node.js + Express on the backend.
 
 ---
 
 ## Features
 
-- ChatGPT-style chat interface with message bubbles
+- Personal chatbot with a modern, clean interface
 - User vs AI messages clearly separated (aligned left/right)
 - Left sidebar with full conversation history (localStorage)
 - Multi-select delete for chat history management
@@ -27,7 +27,7 @@ JoAI is a production-ready AI chatbot featuring a clean, minimalist light-theme 
 - Input box fixed at the bottom with keyboard shortcuts
 - Error handling for API failures (shown inline, non-blocking)
 - Responsive design — works on mobile, tablet, and desktop
-- Supports OpenRouter API (cloud) and Ollama (local)
+- Powered by OpenRouter API (Llama 3 — free model)
 - Secure `.env`-based configuration — no hardcoded secrets
 - Proxy via Vite dev server — no CORS issues during development
 
@@ -40,7 +40,7 @@ JoAI is a production-ready AI chatbot featuring a clean, minimalist light-theme 
 | Frontend | React 18 + Vite 5 |
 | Styling | TailwindCSS 3 |
 | Backend | Node.js + Express 4 |
-| AI Integration | OpenRouter API / Ollama |
+| AI Model | Llama 3 via OpenRouter API |
 | HTTP Client | Axios |
 | Dev Tooling | Nodemon, Vite Dev Server |
 
@@ -50,8 +50,9 @@ JoAI is a production-ready AI chatbot featuring a clean, minimalist light-theme 
 
 ```
 joai-chatbot/
-├── assets/                        # Static assets
-│   └── demo.mov                   # Demo video
+├── assets/
+│   ├── demo.gif                   # Demo preview
+│   └── demo.mov                   # Original demo video
 ├── client/                        # React + Vite frontend
 │   ├── src/
 │   │   ├── components/
@@ -74,7 +75,7 @@ joai-chatbot/
 │   ├── routes/
 │   │   └── chat.js                # POST /api/chat
 │   ├── services/
-│   │   └── aiService.js           # OpenRouter + Ollama integration
+│   │   └── aiService.js           # OpenRouter API integration
 │   ├── index.js                   # Server entry + CORS + routing
 │   └── package.json
 ├── .env.example                   # Template — copy to .env
@@ -90,7 +91,7 @@ joai-chatbot/
 
 - **Node.js 18+** — [nodejs.org](https://nodejs.org)
 - **npm** (bundled with Node.js)
-- **OpenRouter API key** — free at [openrouter.ai](https://openrouter.ai) (OR Ollama installed locally)
+- **OpenRouter API key** — free at [openrouter.ai](https://openrouter.ai)
 
 ---
 
@@ -160,15 +161,10 @@ All configuration lives in the `.env` file at the project root. Never commit thi
 | Variable | Required | Default | Description |
 |---|---|---|---|
 | `AI_PROVIDER` | No | `openrouter` | `openrouter` or `ollama` |
-| `OPENROUTER_API_KEY` | Yes* | — | Your OpenRouter API key |
-| `OPENROUTER_MODEL` | No | `openai/gpt-3.5-turbo` | Any model from openrouter.ai/models |
-| `OLLAMA_URL` | No | `http://localhost:11434/api/chat` | Ollama local endpoint |
-| `OLLAMA_MODEL` | No | `llama3` | Ollama model name |
-| `OLLAMA_FALLBACK` | No | `false` | Fall back to Ollama if OpenRouter fails |
+| `OPENROUTER_API_KEY` | Yes | — | Your OpenRouter API key |
+| `OPENROUTER_MODEL` | No | `meta-llama/llama-3.3-70b-instruct:free` | Model to use — any free model from openrouter.ai |
 | `PORT` | No | `3001` | Backend port |
 | `CLIENT_URL` | No | `http://localhost:5173` | Frontend URL (CORS whitelist) |
-
-*Required when `AI_PROVIDER=openrouter`
 
 ---
 
