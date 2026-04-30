@@ -1,6 +1,6 @@
 # JoAI Chatbot
 
-> A personal AI chatbot built by João Vilas-Boas Correia — powered by OpenRouter.
+> A personal AI chatbot built by João Vilas-Boas Correia — powered by Llama 3 LLM.
 
 ---
 
