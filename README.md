@@ -168,36 +168,6 @@ All configuration lives in the `.env` file at the project root. Never commit thi
 
 ---
 
-## Git Workflow
-
-This project follows a `dev → main` branching strategy.
-
-```
-main    — stable, production-ready branch
-dev     — active development branch
-```
-
-All feature work is committed to `dev`, then merged into `main` for releases.
-
-```bash
-# Switch to dev for all development work
-git checkout dev
-
-# Stage and commit changes
-git add .
-git commit -m "feat: describe your change"
-
-# Push dev to remote
-git push origin dev
-
-# When ready to release — merge dev into main
-git checkout main
-git merge dev
-git push origin main
-```
-
----
-
 ## License
 
 This project and its code belong to **João Vilas-Boas Correia** (joaopsn3@gmail.com).
