@@ -1,6 +1,6 @@
 # JoAI Chatbot
 
-> A personal AI chatbot built by João Vilas-Boas Correia — powered by OpenRouter with Llama 3.
+> A personal AI chatbot built by João Vilas-Boas Correia — powered by OpenRouter.
 
 ---
 
@@ -12,7 +12,7 @@
 
 ## Overview
 
-JoAI is a personal, production-ready AI chatbot built from scratch by João Vilas-Boas Correia. It features a clean, minimalist light-theme interface and connects to AI models via the OpenRouter API (using Llama 3 as the default free model). Built with React + Vite on the frontend and Node.js + Express on the backend.
+JoAI is a personal, production-ready AI chatbot built from scratch by João Vilas-Boas Correia. It features a clean, minimalist light-theme interface and connects to AI models via the OpenRouter API. Built with React + Vite on the frontend and Node.js + Express on the backend.
 
 ---
 
@@ -27,7 +27,7 @@ JoAI is a personal, production-ready AI chatbot built from scratch by João Vila
 - Input box fixed at the bottom with keyboard shortcuts
 - Error handling for API failures (shown inline, non-blocking)
 - Responsive design — works on mobile, tablet, and desktop
-- Powered by OpenRouter API (Llama 3 — free model)
+- Powered by OpenRouter API (supports any available model)
 - Secure `.env`-based configuration — no hardcoded secrets
 - Proxy via Vite dev server — no CORS issues during development
 
@@ -40,7 +40,7 @@ JoAI is a personal, production-ready AI chatbot built from scratch by João Vila
 | Frontend | React 18 + Vite 5 |
 | Styling | TailwindCSS 3 |
 | Backend | Node.js + Express 4 |
-| AI Model | Llama 3 via OpenRouter API |
+| AI Integration | OpenRouter API |
 | HTTP Client | Axios |
 | Dev Tooling | Nodemon, Vite Dev Server |
 
@@ -160,7 +160,7 @@ All configuration lives in the `.env` file at the project root. Never commit thi
 
 | Variable | Required | Default | Description |
 |---|---|---|---|
-| `AI_PROVIDER` | No | `openrouter` | `openrouter` or `ollama` |
+| `AI_PROVIDER` | No | `openrouter` | AI provider to use |
 | `OPENROUTER_API_KEY` | Yes | — | Your OpenRouter API key |
 | `OPENROUTER_MODEL` | No | `meta-llama/llama-3.3-70b-instruct:free` | Model to use — any free model from openrouter.ai |
 | `PORT` | No | `3001` | Backend port |
