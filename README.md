@@ -6,7 +6,8 @@
 
 ## Demo
 
-https://github.com/jovbcorreia/joai-chatbot/raw/main/assets/demo.mov
+<video src="https://github.com/jovbcorreia/joai-chatbot/raw/main/assets/demo.mov" autoplay muted loop playsinline controls width="100%">
+</video>
 
 ---
 
