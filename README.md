@@ -6,15 +6,13 @@
 
 ## Demo
 
-<video src="assets/demo.mov" controls width="100%" style="border-radius: 12px; max-width: 100%;">
-  Your browser does not support the video tag.
-</video>
+https://github.com/jovbcorreia/joai-chatbot/raw/main/assets/demo.mov
 
 ---
 
 ## Overview
 
-JoAI is a production-ready AI chatbot featuring a clean, minimalist dark-theme interface. It connects to AI models via the OpenRouter cloud API (with optional Ollama local fallback), and is built with React + Vite on the frontend and Node.js + Express on the backend.
+JoAI is a production-ready AI chatbot featuring a clean, minimalist light-theme interface. It connects to AI models via the OpenRouter cloud API (with optional Ollama local fallback), and is built with React + Vite on the frontend and Node.js + Express on the backend.
 
 ---
 
@@ -22,13 +20,14 @@ JoAI is a production-ready AI chatbot featuring a clean, minimalist dark-theme i
 
 - ChatGPT-style chat interface with message bubbles
 - User vs AI messages clearly separated (aligned left/right)
+- Left sidebar with full conversation history (localStorage)
+- Multi-select delete for chat history management
 - Animated loading indicator while AI is thinking
 - Auto-scroll to the latest message
 - Input box fixed at the bottom with keyboard shortcuts
 - Error handling for API failures (shown inline, non-blocking)
 - Responsive design — works on mobile, tablet, and desktop
-- Dark theme with minimalist, futuristic aesthetic
-- Supports OpenRouter API (cloud) and Ollama (local) 
+- Supports OpenRouter API (cloud) and Ollama (local)
 - Secure `.env`-based configuration — no hardcoded secrets
 - Proxy via Vite dev server — no CORS issues during development
 
@@ -51,17 +50,21 @@ JoAI is a production-ready AI chatbot featuring a clean, minimalist dark-theme i
 
 ```
 joai-chatbot/
+├── assets/                        # Static assets
+│   └── demo.mov                   # Demo video
 ├── client/                        # React + Vite frontend
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Header.jsx         # Top bar with logo and status
+│   │   │   ├── Header.jsx         # Top bar with logo and nav buttons
+│   │   │   ├── Sidebar.jsx        # Left conversation history panel
+│   │   │   ├── WelcomeScreen.jsx  # Landing state before first message
 │   │   │   ├── ChatWindow.jsx     # Scrollable message area
 │   │   │   ├── MessageBubble.jsx  # Individual message bubble
 │   │   │   ├── LoadingIndicator.jsx
 │   │   │   └── InputBar.jsx       # Fixed bottom input form
 │   │   ├── App.jsx                # Root component + state
 │   │   ├── main.jsx               # React entry point
-│   │   └── index.css              # Tailwind imports + custom scrollbar
+│   │   └── index.css              # Tailwind imports + custom animations
 │   ├── index.html
 │   ├── vite.config.js             # Dev proxy → localhost:3001
 │   ├── tailwind.config.js
@@ -94,7 +97,7 @@ joai-chatbot/
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/joai-chatbot.git
+git clone https://github.com/jovbcorreia/joai-chatbot.git
 cd joai-chatbot
 ```
 
@@ -196,31 +199,6 @@ git checkout main
 git merge dev
 git push origin main
 ```
-
----
-
-## Screenshots
-
-> Screenshots to be added after first deployment.
-
-| Desktop Chat View | Mobile View |
-|---|---|
-| _coming soon_ | _coming soon_ |
-
----
-
-## Future Improvements
-
-- [ ] Persist conversation history (localStorage or database)
-- [ ] Multiple named chat sessions
-- [ ] Markdown + code block rendering for AI responses
-- [ ] Syntax highlighting for code snippets
-- [ ] Streaming responses (Server-Sent Events)
-- [ ] User authentication / accounts
-- [ ] Model selector dropdown in the UI
-- [ ] Dark / light theme toggle
-- [ ] Voice input (Web Speech API)
-- [ ] Export chat history as PDF or plain text
 
 ---
 
