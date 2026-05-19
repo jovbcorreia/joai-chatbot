@@ -8,6 +8,12 @@
 
 ![JoAI Chatbot Demo](assets/demo.gif)
 
+**Main Page**
+![Main Page](screenshots/main-page.png)
+
+**Talking with My AI**
+![Talking with My AI](screenshots/example-prompt.png)
+
 ---
 
 ## Overview
